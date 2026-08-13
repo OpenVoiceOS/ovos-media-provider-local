@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-media-provider-local"
+dynamic = ["version"]
+description = "OVOS MediaProvider plugin for a local file-system media library (replaces ovos-skill-local-media)"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "JarbasAI", email = "jarbasai@mailfence.com" }]
+requires-python = ">=3.10"
+keywords = ["ovos", "OpenVoiceOS", "OCP", "media", "local", "filesystem", "MediaProvider"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "mediavocab>=1.0.0",
+    "mutagen>=1.47.0",
+    "ovos-plugin-manager>=2.8.0a1,<3.0.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-media-provider-local"
+Source = "https://github.com/OpenVoiceOS/ovos-media-provider-local"
+
+[project.entry-points."opm.media.provider"]
+local = "ovos_media_provider_local:LocalMediaProvider"
+
+[tool.setuptools]
+packages = ["ovos_media_provider_local"]
+
+[tool.setuptools.dynamic]
+version = { attr = "ovos_media_provider_local.version.__version__" }
