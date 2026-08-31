@@ -10,7 +10,7 @@ directly.
 
 Each audio/video file under a configured path becomes one
 ``mediavocab.Release`` with a ``file://`` uri. Tags are read with
-``mutagen`` where the format supports it; the filename is the fallback title
+``tinytag`` where the format supports it; the filename is the fallback title
 when tags are absent, unreadable, or the format is untagged. The index is
 rebuilt lazily (see :mod:`ovos_media_provider_local.indexer`) — no daemon
 thread, no persisted cache.
