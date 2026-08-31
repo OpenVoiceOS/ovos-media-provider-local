@@ -20,3 +20,4 @@ jobs:
       changelog_max_issues: 100
       publish_pypi: true
       notify_matrix: true
+
