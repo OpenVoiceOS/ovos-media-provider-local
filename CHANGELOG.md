@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.1a2](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a2) (2026-08-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/0.0.1a3...0.0.1a2)
+
 ## [0.0.1a3](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a3) (2026-08-31)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/e9bc6e93b7b5369e510bfe037c74e0b899d61149...0.0.1a3)
