@@ -1,6 +1,6 @@
 """Local media library scanner and mtime-cached index.
 
-Walks a set of configured directories, reads tags with ``mutagen`` where the
+Walks a set of configured directories, reads tags with ``tinytag`` where the
 file format is supported, and falls back to the filename when tags are
 missing or unreadable. The index is a plain in-memory dict keyed by file
 path; :meth:`LocalLibraryIndex.refresh` re-walks the configured paths and
@@ -15,9 +15,9 @@ from typing import Dict, Iterable, List, Optional
 from ovos_utils.log import LOG
 
 try:
-    from mutagen import File as MutagenFile
-except ImportError:  # pragma: no cover - mutagen is a hard dependency, kept
-    MutagenFile = None  # defensive only; install always brings mutagen in
+    from tinytag import TinyTag
+except ImportError:  # pragma: no cover - tinytag is a hard dependency, kept
+    TinyTag = None  # defensive only; install always brings tinytag in
 
 AUDIO_EXTENSIONS = {
     "aac", "ac3", "aiff", "amr", "ape", "au", "flac", "alac", "m4a",
@@ -62,30 +62,23 @@ def _title_from_filename(path: str) -> str:
 
 
 def _read_tags(path: str) -> Optional[dict]:
-    """Best-effort tag read via mutagen. Returns ``None`` on any failure
+    """Best-effort tag read via tinytag. Returns ``None`` on any failure
     (missing tags, unsupported/corrupt file, permission error) so the caller
     falls back to the filename."""
-    if MutagenFile is None:
+    if TinyTag is None:
         return None
     try:
-        audio = MutagenFile(path, easy=True)
+        tag = TinyTag.get(path)
     except Exception:
         LOG.debug(f"Could not read tags from {path}", exc_info=True)
         return None
-    if audio is None:
-        return None
     out = {}
-    try:
-        tags = audio.tags or {}
-        for key in ("title", "artist", "album", "genre"):
-            vals = tags.get(key)
-            if vals:
-                out[key] = vals[0] if isinstance(vals, list) else str(vals)
-        if getattr(audio, "info", None) is not None:
-            out["duration"] = getattr(audio.info, "length", None)
-    except Exception:
-        LOG.debug(f"Could not parse tags from {path}", exc_info=True)
-        return None
+    for key in ("title", "artist", "album", "genre"):
+        val = getattr(tag, key, None)
+        if val:
+            out[key] = str(val)
+    if tag.duration:
+        out["duration"] = tag.duration
     return out
 
 

@@ -1,6 +1,6 @@
 """Shared fixtures: a small on-disk library of real, tagged/untagged media
-files. ``ffmpeg`` synthesizes a real, tiny, tagged MP3 (mutagen's ``easy``
-tag reader needs a genuinely decodable stream, not just an ID3 header); the
+files. ``ffmpeg`` synthesizes a real, tiny, tagged MP3 (the tag
+reader needs a genuinely decodable stream, not just an ID3 header); the
 plain WAV file is built with the stdlib ``wave`` module and carries no tags
 at all, exercising the filename-fallback path.
 """
