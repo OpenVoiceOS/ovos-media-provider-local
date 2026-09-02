@@ -1,12 +1,24 @@
 # Changelog
 
-## [0.0.1a2](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a2) (2026-08-31)
+## [0.0.1a5](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a5) (2026-09-02)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/0.0.1a3...0.0.1a2)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/0.0.1a4...0.0.1a5)
+
+**Merged pull requests:**
+
+- docs: tags are read with tinytag [\#4](https://github.com/OpenVoiceOS/ovos-media-provider-local/pull/4) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.1a4](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a4) (2026-08-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/0.0.1a3...0.0.1a4)
 
 ## [0.0.1a3](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a3) (2026-08-31)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/e9bc6e93b7b5369e510bfe037c74e0b899d61149...0.0.1a3)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/0.0.1a2...0.0.1a3)
+
+## [0.0.1a2](https://github.com/OpenVoiceOS/ovos-media-provider-local/tree/0.0.1a2) (2026-08-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-provider-local/compare/e9bc6e93b7b5369e510bfe037c74e0b899d61149...0.0.1a2)
 
 **Merged pull requests:**
 
