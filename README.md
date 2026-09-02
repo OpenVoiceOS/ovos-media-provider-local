@@ -57,7 +57,7 @@ files whose `mtime` changed or that are new, and entries for files that
 disappeared are dropped. There is no background thread — the refresh runs
 synchronously at the start of `search()`.
 
-Tags are read with [`mutagen`](https://mutagen.readthedocs.io/) where the
+Tags are read with [`tinytag`](https://github.com/tinytag/tinytag) where the
 format supports it (title/artist/album/genre/duration). A file with no
 readable tags falls back to a title derived from its filename. `search()`
 scores each candidate with `fuzzy_match` against the query title, with a
