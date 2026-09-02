@@ -17,7 +17,7 @@ entries for files no longer on disk are dropped. There is no persistence
 across process restarts and no background thread — `refresh()` runs inline
 at the start of every `search()`.
 
-Tag extraction is best-effort via `mutagen`'s `easy` interface
+Tag extraction is best-effort via `tinytag`
 (title/artist/album/genre/duration). Any failure to open or parse a file
 (corrupt file, unsupported format, permission error) is logged and the file
 falls back to a title derived from its filename — it is never dropped from
